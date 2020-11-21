@@ -31,10 +31,10 @@ class Shape:
 
 
 class Rectangle(Shape):
-    def __init__(self, color, center, name, bigSide, smallSide):
+    def __init__(self, color, center, name, bigside, smallside):
         super().__init__(color, center, name)
-        self.bigSide = bigSide
-        self.smallSide = smallSide
+        self.bigSide = bigside
+        self.smallSide = smallside
 
     def print(self):
         print("Rectángulo:\n" +
