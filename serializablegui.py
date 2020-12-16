@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
     window = tkinter.Tk()
     window.geometry("625x300")
-    window.title("Agenda De Contactos")
+    window.title("Contactos")
 
     lbNombre = tkinter.Label(window, text="Nombre")
     lbNombre.grid(row=1, column=0)
@@ -46,10 +46,10 @@ if __name__ == '__main__':
     table.column("2", width=100, minwidth=100)
     table.column("3", width=100, minwidth=100)
     table.heading("1", text="Telefono")
-    table.heading("2", text="Nombre")
-    table.heading("3", text="Apellidos")
+    table.heading("2", text="Apellidos")
+    table.heading("3", text="Nombre")
 
-    fichero1 = open("BaseDeDatosConContactos", "ab+")
+    fichero1 = open("ContactsData", "ab+")
     fichero1.seek(0)
     try:
         contactList = pickle.load(fichero1)
@@ -150,7 +150,7 @@ if __name__ == '__main__':
 
 
     def on_closing():
-        file = open("BaseDeDatosConContactos", "wb")
+        file = open("ContactsData", "wb")
         pickle.dump(contactList, file)
         file.close()
         window.destroy()
